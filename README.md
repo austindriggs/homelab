@@ -1,10 +1,10 @@
 # Austin's Homelab
 
-My apartment-lab (really just a NAS) documentation. Hopefully one day with config files and such.
+My apartment-lab documentation; hopefully one day with config files and such.
 
 Goals:
 - Sync and backup files, (my and my parents) pictures/videos, and projects.
-- Document the things and processes I'm doing:  It would be nice for someone to be able to understand how to access and maintain my things, or even replicate it.
+- Document the things and processes I'm doing:  It would be nice for someone to be able to understand how to access and maintain my homelab, or even (roughly) replicate it.
 
 
 ## DEVICES
