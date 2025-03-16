@@ -267,7 +267,7 @@ casaos@casaos:~$
 
 ## RAID
 
-I (way too recently) learned that you can just install RAID software via the terminal, because CasaOS is built on top of Ubuntu, it isn't it's own thing. Because of this, I can follow any old tutorial for RAID (specifically mirroring) on an Ubuntu machine/server. 
+I (way too recently) learned that you can just install RAID software via the terminal, because CasaOS is built on top of Debian, it isn't it's own thing. Because of this, I can follow any old tutorial for RAID (specifically mirroring) on an Ubuntu machine/server. 
 
 > [!danger]
 > This wipes the disk(s) completely, so make sure everything is backed up, and that you are selecting the correct disks.
