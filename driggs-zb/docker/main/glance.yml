@@ -18,7 +18,7 @@ pages:
             cache: 1d
             url: http://172.16.58.224:8013/api/server/statistics
             headers:
-              x-api-key: LYSkFkIOMtLR25EjS9V653pMhpPKIJdUaQzyGq8vN0
+              x-api-key: insert_api_key_for_immich_here
               Accept: "application/json"
             template:
               <div class="flex justify-between text-center">
