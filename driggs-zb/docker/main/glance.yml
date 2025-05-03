@@ -18,7 +18,30 @@ pages:
             cache: 1d
             url: http://172.16.58.224:8013/api/server/statistics
             headers:
-              x-api-key: insert_api_key_for_immich_here
+              x-api-key: insert_api_key
+              Accept: "application/json"
+            template:
+              <div class="flex justify-between text-center">
+                <div>
+                    <div class="color-highlight size-h3">{{ .JSON.Int "photos" | formatNumber }}</div>
+                    <div class="size-h6">PHOTOS</div>
+                </div>
+                <div>
+                    <div class="color-highlight size-h3">{{ .JSON.Int "videos" | formatNumber }}</div>
+                    <div class="size-h6">VIDEOS</div>
+                </div>
+                <div>
+                    <div class="color-highlight size-h3">{{ div (.JSON.Int "usage" | toFloat) 1073741824 | toInt | formatNumber }}GB</div>
+                    <div class="size-h6">USAGE</div>
+                </div>
+              </div>
+
+          - type: custom-api
+            title: Parents Stats
+            cache: 1d
+            url: http://172.16.58.224:8019/api/server/statistics
+            headers:
+              x-api-key: insert_api_key
               Accept: "application/json"
             template:
               <div class="flex justify-between text-center">
@@ -39,11 +62,9 @@ pages:
           - type: repository
             repository: austindriggs/homelab
             commits-limit: 3
-
           - type: repository
-            repository: austindriggs/immich-frame
+            repository: austindriggs/recipes
             commits-limit: 3
-
           - type: repository
             repository: austindriggs/exercise
             commits-limit: 3
