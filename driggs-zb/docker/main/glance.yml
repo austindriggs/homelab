@@ -1,0 +1,81 @@
+theme:
+  background-color: 0 0 16
+  primary-color: 43 59 81
+  positive-color: 61 66 44
+  negative-color: 6 96 59
+
+pages:
+  - name: Start
+    width: slim
+    hide-desktop-navigation: true
+    center-vertically: true
+    columns:
+
+      - size: small
+        widgets:
+          - type: custom-api
+            title: Immich Stats
+            cache: 1d
+            url: http://172.16.58.224:8013/api/server/statistics
+            headers:
+              x-api-key: LYSkFkIOMtLR25EjS9V653pMhpPKIJdUaQzyGq8vN0
+              Accept: "application/json"
+            template:
+              <div class="flex justify-between text-center">
+                <div>
+                    <div class="color-highlight size-h3">{{ .JSON.Int "photos" | formatNumber }}</div>
+                    <div class="size-h6">PHOTOS</div>
+                </div>
+                <div>
+                    <div class="color-highlight size-h3">{{ .JSON.Int "videos" | formatNumber }}</div>
+                    <div class="size-h6">VIDEOS</div>
+                </div>
+                <div>
+                    <div class="color-highlight size-h3">{{ div (.JSON.Int "usage" | toFloat) 1073741824 | toInt | formatNumber }}GB</div>
+                    <div class="size-h6">USAGE</div>
+                </div>
+              </div>
+
+          - type: repository
+            repository: austindriggs/homelab
+            commits-limit: 3
+
+          - type: repository
+            repository: austindriggs/immich-frame
+            commits-limit: 3
+
+          - type: repository
+            repository: austindriggs/exercise
+            commits-limit: 3
+
+      - size: full
+        widgets:
+          - type: monitor
+            cache: 1m
+            title: ZimaBlade NAS
+            sites:
+              - title: Portainer
+                url: https://driggs-zb:8097/#!/3/docker/dashboard
+                check-url: https://172.16.58.224:8097/
+                allow-insecure: true
+                icon: di:portainer
+              - title: Syncthing
+                url: http://driggs-zb:8057/
+                check-url: http://172.16.58.224:8057/
+                icon: di:syncthing
+              - title: Immich
+                url: http://driggs-zb:8013/
+                check-url: http://172.16.58.224:8013/
+                icon: di:immich
+              - title: Parents
+                url: http://driggs-zb:8019/
+                check-url: http://172.16.58.224:8019/
+                icon: di:immich
+              - title: Jellyfin
+                url: http://driggs-zb:8074/
+                check-url: http://172.16.58.224:8074/
+                icon: di:jellyfin
+              - title: Jellystat
+                url: http://driggs-zb:8075/
+                check-url: http://172.16.58.224:8075/
+                icon: di:jellystat

@@ -807,15 +807,3 @@ md127 : active raid1 sdb1[1] sda1[0]
 unused devices: <none>
 ```
 
-
-## FUTURE
-
-### Preventing Failures
-
-Obviously the first step is the 3-2-1 backup method, I'm working on it.
-
-
-### Detecting Failures
-
-TODO
-

@@ -1,0 +1,26 @@
+version: "3.8"
+
+services:
+  jellyfin:
+    container_name: jellyfin
+    image: jellyfin/jellyfin
+    environment:
+      - PUID=1000
+      - PGID=1000
+      - TZ=America/New_York
+    volumes:
+      - /docker/jellyfin:/config
+      - /mnt/raid1/Jellyfin:/data/jellyfin
+    ports:
+      - 8074:8096
+    restart: unless-stopped
+
+  jellystat-db:
+    image: postgres:15.2
+    container_name: jellystat-db
+    restart: unless-stopped
+    environment:
+      POSTGRES_USER: postgres
+      POSTGRES_PASSWORD: mypassword
+    volumes:
+      - /docker/jellyfin/stats/postgres:/var/lib/postgresql/data
