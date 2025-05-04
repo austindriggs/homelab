@@ -1,32 +1,72 @@
 # Austin's Homelab
 
-My apartment-lab documentation; hopefully one day with config files and such.
+My apartment-lab documentation. The inital goal was to self-host all of the terabyte of pictures and videos that my parents have taken over the last few decades, but has grown into a file-backup NAS, home automation system, movie and show library, and more!
 
 
 ## SUMMARY
 
+Click the name in the "SEVICE" column to go to its user guide.
+
 ### DEBIAN SERVICES
 
-| STATUS | SERVICE (LINK) | DESCRIPTION                                                                                      | LOCATION                                             |
+| STATUS | SERVICE        | DESCRIPTION                                                                                      | LOCATION                                             |
 | ------ | -------------- | ------------------------------------------------------------------------------------------------ | ---------------------------------------------------- |
 | x      | SSH            | SSH over local network                                                                           | 127.16.58.224                                        |
 | x      | Docker         | Used to install apps                                                                             | `docker ps`                                          |
-| x      | mdadm          | Used for software RAID 1 configuration for my two hard drives                                    | `sudo mdadm --detail /dev/md0` or `cat /proc/mdstat` |
-| x      | Tailscale      | Mesh VPN to connect                                                                              | 100.126.109.100                                      |
+| x      | mdadm          | Used for software RAID1 to mirror my two hard drives                                             | `sudo mdadm --detail /dev/md0` or `cat /proc/mdstat` |
+| x      | [Tailscale]()  | Mesh VPN to connect                                                                              | 100.126.109.100                                      |
 | x      | Samba          | Network share for `/mnt/raid1`                                                                   | `smb://driggs-zb/raid1/`                             |
 
 
 ### DOCKER APPS
 
-| STATUS | SERVICE (LINK) | DESCRIPTION                         | LOCATION |
-| ------ | -------------- | ----------------------------------- | -------- |
-| x      | Portainer      | Managing docker apps                | 8097     |
-| x      | Glance         | Something for a homepage            | 8080     |
-| x      | Syncthing      | Sync files between devices          | 8057     |
-|        | Immich         | Photo library for me                | 8013     |
-| x      | Immich         | Photo library for my parents        | 8019     |
-| x      | Jellyfin       | Video library for me and my parents | 8074     |
-|        | Jellystat      | Video library statistics            | 8075     |
+| STATUS | SERVICE        | DESCRIPTION                          | PORT |
+| ------ | -------------- | ------------------------------------ | ---- |
+| x      | Portainer      | Managing docker apps                 | 8097 |
+| x      | Glance         | Homepage to monitor and link to apps | 8080 |
+| x      | Syncthing      | Sync files between devices           | 8057 |
+|        | Immich         | Photo library for me                 | 8013 |
+| x      | [Immich]()     | Photo library for my parents         | 8019 |
+| x      | [Jellyfin]()   | Video library for me and my parents  | 8074 |
+|        | Jellystat      | Video library statistics             | 8075 |
+
+
+## USER GUIDES
+
+### Tailscale
+
+Setup:
+1. Download the Tailscale app from the app store.
+2. Sign in with your google account (either mine, mom's, or the guest gmail account).
+3. When asked what Tailnet you want to join, select MY email, not the one you just signed in with.
+4. Allow any VPN access that Tailscale needs in your phone's settings.
+5. For any more documentation notes, see [TODO]().
+
+
+### IMMICH
+
+Setup:
+1. Verify you are connected to [Tailscale]() (follow the guide above if not).
+2. Download the Immich app from the app store. Alternatively, you can type the URL below into a browser.
+3. Enter `http://driggs-zb:8019` for the URL (not HTTPS).
+4. Sign in using your regular email address and the password I've given you. The only emails you'll ever get are directly from me.
+5. Setup any user settings, but do not choose to backup any photos to Immich. You should continue to back up to Google Photos and a regular hard drive.
+6. For any more documentation notes, see [TODO]().
+
+
+### JELLYFIN
+
+Setup:
+1. Verify you are connected to [Tailscale]() (follow the guide above if not).
+2. Download the Jellyfin app from the app store (not Swiftfin). Alternatively, you can type the URL below into a browser.
+3. Enter `http://driggs-zb:8074` for the URL (not HTTPS).
+4. Sign in with your username and password that I've given you.
+5. You can configure any settings you want.
+
+Downloading Movies for Offline Use:
+1. To download movies from the Jellyfin app or website, you need to be on a laptop or tablet, as far as I know this doesn't work on an iPhone.
+2. Navigate to the movie you want to download.
+3. Select the three dots and press download.
 
 
 ## RESOURCES

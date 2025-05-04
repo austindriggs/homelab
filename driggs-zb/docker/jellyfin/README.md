@@ -7,7 +7,7 @@ Jellyfin is used to manage media via a modern interface:
 - Backup and provide access to my offline Spotify local files.
 
 
-To login, navigate to:
+To login after first startup, navigate to:
 ```
 http://driggs-zb:8074/web/index.html#!/wizardstart.html
 ```
