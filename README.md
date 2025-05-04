@@ -50,7 +50,7 @@ Setup:
 **[`^ back to top ^`](#summary)**
 
 Setup:
-1. Verify you are connected to [Tailscale]() (follow the guide above if not).
+1. Verify you are connected to [Tailscale](#tailscale) (follow the guide above if not).
 2. Download the Immich app from the app store. Alternatively, you can type the URL below into a browser.
 3. Enter `http://driggs-zb:8019` for the URL (not HTTPS).
 4. Sign in using your regular email address and the password I've given you. The only emails you'll ever get are directly from me.
@@ -63,7 +63,7 @@ Setup:
 **[`^ back to top ^`](#summary)**
 
 Setup:
-1. Verify you are connected to [Tailscale]() (follow the guide above if not).
+1. Verify you are connected to [Tailscale](#tailscale) (follow the guide above if not).
 2. Download the Jellyfin app from the app store (not Swiftfin). Alternatively, you can type the URL below into a browser.
 3. Enter `http://driggs-zb:8074` for the URL (not HTTPS).
 4. Sign in with your username and password that I've given you.
