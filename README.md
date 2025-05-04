@@ -9,31 +9,33 @@ Click the name in the "SEVICE" column to go to its user guide.
 
 ### DEBIAN SERVICES
 
-| STATUS | SERVICE        | DESCRIPTION                                                                                      | LOCATION                                             |
-| ------ | -------------- | ------------------------------------------------------------------------------------------------ | ---------------------------------------------------- |
-| x      | SSH            | SSH over local network                                                                           | 127.16.58.224                                        |
-| x      | Docker         | Used to install apps                                                                             | `docker ps`                                          |
-| x      | mdadm          | Used for software RAID1 to mirror my two hard drives                                             | `sudo mdadm --detail /dev/md0` or `cat /proc/mdstat` |
-| x      | [Tailscale]()  | Mesh VPN to connect                                                                              | 100.126.109.100                                      |
-| x      | Samba          | Network share for `/mnt/raid1`                                                                   | `smb://driggs-zb/raid1/`                             |
+| STATUS | SERVICE                  | DESCRIPTION                                                                                      | LOCATION                                             |
+| ------ | ------------------------ | ------------------------------------------------------------------------------------------------ | ---------------------------------------------------- |
+| x      | SSH                      | SSH over local network                                                                           | 127.16.58.224                                        |
+| x      | Docker                   | Used to install apps                                                                             | `docker ps`                                          |
+| x      | mdadm                    | Used for software RAID1 to mirror my two hard drives                                             | `sudo mdadm --detail /dev/md0` or `cat /proc/mdstat` |
+| x      | [Tailscale](#tailscale)  | Mesh VPN to connect                                                                              | 100.126.109.100                                      |
+| x      | Samba                    | Network share for `/mnt/raid1`                                                                   | `smb://driggs-zb/raid1/`                             |
 
 
 ### DOCKER APPS
 
-| STATUS | SERVICE        | DESCRIPTION                          | PORT |
-| ------ | -------------- | ------------------------------------ | ---- |
-| x      | Portainer      | Managing docker apps                 | 8097 |
-| x      | Glance         | Homepage to monitor and link to apps | 8080 |
-| x      | Syncthing      | Sync files between devices           | 8057 |
-|        | Immich         | Photo library for me                 | 8013 |
-| x      | [Immich]()     | Photo library for my parents         | 8019 |
-| x      | [Jellyfin]()   | Video library for me and my parents  | 8074 |
-|        | Jellystat      | Video library statistics             | 8075 |
+| STATUS | SERVICE                 | DESCRIPTION                          | PORT |
+| ------ | ----------------------- | ------------------------------------ | ---- |
+| x      | Portainer               | Managing docker apps                 | 8097 |
+| x      | Glance                  | Homepage to monitor and link to apps | 8080 |
+| x      | Syncthing               | Sync files between devices           | 8057 |
+|        | Immich                  | Photo library for me                 | 8013 |
+| x      | [Immich](#immich)       | Photo library for my parents         | 8019 |
+| x      | [Jellyfin](#jellyfin)   | Video library for me and my parents  | 8074 |
+|        | Jellystat               | Video library statistics             | 8075 |
 
 
 ## USER GUIDES
 
 ### Tailscale
+
+**[`^ back to top ^`](#summary)**
 
 Setup:
 1. Download the Tailscale app from the app store.
@@ -45,6 +47,8 @@ Setup:
 
 ### IMMICH
 
+**[`^ back to top ^`](#summary)**
+
 Setup:
 1. Verify you are connected to [Tailscale]() (follow the guide above if not).
 2. Download the Immich app from the app store. Alternatively, you can type the URL below into a browser.
@@ -55,6 +59,8 @@ Setup:
 
 
 ### JELLYFIN
+
+**[`^ back to top ^`](#summary)**
 
 Setup:
 1. Verify you are connected to [Tailscale]() (follow the guide above if not).
