@@ -68,6 +68,7 @@ Setup:
 3. Enter `http://driggs-zb:8074` for the URL (not HTTPS).
 4. Sign in with your username and password that I've given you.
 5. You can configure any settings you want.
+6. For any more documentation notes, see [./driggs-zb/docker/jellyfin/](./driggs-zb/docker/jellyfin/README.md)
 
 Downloading Movies for Offline Use:
 1. To download movies from the Jellyfin app or website, you need to be on a laptop or tablet, as far as I know this doesn't work on an iPhone.
