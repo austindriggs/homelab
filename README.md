@@ -42,7 +42,7 @@ Setup:
 2. Sign in with your google account (either mine, mom's, or the guest gmail account).
 3. When asked what Tailnet you want to join, select MY email, not the one you just signed in with.
 4. Allow any VPN access that Tailscale needs in your phone's settings.
-5. For any more documentation notes, see [TODO]().
+5. For any more documentation notes, see [./driggs-zb/debian/](./driggs-zb/debian/README.md#tailscale).
 
 
 ### IMMICH
@@ -55,7 +55,7 @@ Setup:
 3. Enter `http://driggs-zb:8019` for the URL (not HTTPS).
 4. Sign in using your regular email address and the password I've given you. The only emails you'll ever get are directly from me.
 5. Setup any user settings, but do not choose to backup any photos to Immich. You should continue to back up to Google Photos and a regular hard drive.
-6. For any more documentation notes, see [TODO]().
+6. For any more documentation notes, see [./driggs-zb/docker/immich/](./driggs-zb/docker/immich/README.md).
 
 
 ### JELLYFIN
