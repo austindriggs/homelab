@@ -281,3 +281,47 @@ and then restart samba again:
 sudo systemctl restart smbd
 ```
 
+## rsync
+
+I want to be able to plug in a USB drive and sync all the files from my NAS to it. This can be done (pretty much an any hadrware) using rsync.
+
+I plugged in the hard drive, ran `lsblk` to see it was under `/dev/sdc1`, and then created `sudo mkdir -p /mnt/vulcan`.
+
+To backup Jellyfin (since this is the largest directory), I ran `backup_jf.sh`:
+```bash
+#!/bin/bash
+
+# Exit on error
+set -e
+
+# Mount USB Drive
+MOUNT_POINT="/mnt/vulcan"
+DEVICE="/dev/sdc1"
+
+if ! mountpoint -q "$MOUNT_POINT"; then
+	echo "Mounting $DEVICE to $MOUNT_POINT ..."
+	sudo mount "$DEVICE" "$MOUNT_POINT" || { echo "Mount failed."; exit 1; }
+else
+	echo "$MOUNT_POINT is already mounted."
+fi
+
+# Source files from the NAS
+SRC="/mnt/raid1/Jellyfin/"
+
+# Destination on USB Drive
+DST="$MOUNT_POINT/Jellyfin/"
+
+# rsync backup
+rsync -av --progress --partial --update --delete "$SRC" "$DST"
+
+# Write updated timestamp
+DATE=$(date +"%Y-%m-%d at %H:%M:%S")
+echo "Last Updated on $DATE" > "$DST/backup_jf.txt"
+
+echo "Jellyfin backup is complete."
+```
+
+To backup shows and the rest of my documents, I ran `backup_docs`:
+```bash
+
+```

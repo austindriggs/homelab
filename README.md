@@ -5,7 +5,7 @@ My apartment-lab documentation. The inital goal was to self-host all of the tera
 
 ## SUMMARY
 
-Click the name in the "SEVICE" column to go to its user guide.
+Click the name in the "SERVICE" column to go to its user guide.
 
 ### DEBIAN SERVICES
 
