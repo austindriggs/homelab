@@ -285,7 +285,12 @@ sudo systemctl restart smbd
 
 I want to be able to plug in a USB drive and sync all the files from my NAS to it. This can be done (pretty much an any hadrware) using rsync.
 
-I plugged in the hard drive, ran `lsblk` to see it was under `/dev/sdc1`, and then created `sudo mkdir -p /mnt/vulcan`.
+I plugged in the hard drive, ran `lsblk` to see it was under `/dev/sdc1`, ran `sudo mkdir -p /mnt/vulcan` and then added this line to `/etc/fstab`:
+```bash
+UUID=0d54899d-3381-4689-9546-3a864ec754a2 /mnt/vulcan ext4 defaults 0 2
+```
+
+After adding to fstab, I ran `sudo mount -a` to mount it.
 
 To backup Jellyfin (since this is the largest directory), I ran `backup_jf.sh`:
 ```bash
@@ -294,34 +299,69 @@ To backup Jellyfin (since this is the largest directory), I ran `backup_jf.sh`:
 # Exit on error
 set -e
 
-# Mount USB Drive
+# Variables
 MOUNT_POINT="/mnt/vulcan"
-DEVICE="/dev/sdc1"
-
-if ! mountpoint -q "$MOUNT_POINT"; then
-	echo "Mounting $DEVICE to $MOUNT_POINT ..."
-	sudo mount "$DEVICE" "$MOUNT_POINT" || { echo "Mount failed."; exit 1; }
-else
-	echo "$MOUNT_POINT is already mounted."
-fi
-
-# Source files from the NAS
 SRC="/mnt/raid1/Jellyfin/"
-
-# Destination on USB Drive
 DST="$MOUNT_POINT/Jellyfin/"
 
+# Ensure mount point is valid
+sudo mount "$MOUNT_POINT"
+if ! mountpoint -q "$MOUNT_POINT"; then
+	echo "$MOUNT_POINT is not mounted."
+	exit 1
+fi
+
 # rsync backup
-rsync -av --progress --partial --update --delete "$SRC" "$DST"
+rsync -av --info=progress2 --partial --update --delete --exclude 'backup_jf.txt' --exclude 'backup_jf.log' --exclude 'Shows/' "$SRC" "$DST" | tee -a "$MOUNT_POINT/backup_jf.log"
 
-# Write updated timestamp
-DATE=$(date +"%Y-%m-%d at %H:%M:%S")
-echo "Last Updated on $DATE" > "$DST/backup_jf.txt"
-
+# Write updated timestamp and missed shows
+{
+	echo "Last updated on $(date +"%Y-%m-%d at %H:%M:%S")"
+	echo
+	echo "Skipped shows directory:"
+	tree "$SRC/Shows"
+} > "$MOUNT_POINT/backup_jf.txt"
 echo "Jellyfin backup is complete."
+
+# Unmount for safety
+sudo umount "$MOUNT_POINT"
+echo "$MOUNT_POINT is unmounted."
 ```
 
-To backup shows and the rest of my documents, I ran `backup_docs`:
+I followed the same step by plugging in the next drive, ran `sudo mkdir -p /mnt/tgroup`, added this line to `/etc/fstab`, and then ran `sudo mount -a` to mount it:
 ```bash
-
+UUID=0d54899d-3381-4689-9546-3a864ec754a2 /mnt/tgroup ext4 defaults 0 2
 ```
+
+To backup the rest of my stuff, I ran `backup_zb.sh`:
+```bash
+#!/bin/bash
+
+# Exit on error
+set -e
+
+# Variables
+MOUNT_POINT="/mnt/tgroup"
+SRC="/mnt/raid1/"
+DST="$MOUNT_POINT/"
+
+# Ensure mount point is valid
+sudo mount "$MOUNT_POINT"
+if ! mountpoint -q "$MOUNT_POINT"; then
+	echo "$MOUNT_POINT is not mounted."
+	exit 1
+fi
+
+# rsync backup
+rsync -av --info=progress2 --partial --update --delete --exclude 'backup_zb.txt' --exclude 'backup_zb.log' --exclude 'Jellyfin/' "$SRC" "$DST" | tee -a "$MOUNT_POINT/backup_zb.log"
+
+# Write updated timestamp 
+echo "Last updated on $(date +"%Y-%m-%d at %H:%M:%S")" > "$MOUNT_POINT/backup_zb.txt"
+echo "ZimaBlade backup is complete."
+
+# Unmount for safety
+sudo umount "$MOUNT_POINT"
+echo "$MOUNT_POINT is unmounted."
+```
+
+Note that I have chose not to backup my shows just because I don't want to allocate the space.
