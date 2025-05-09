@@ -283,9 +283,51 @@ sudo systemctl restart smbd
 
 ## rsync
 
-I want to be able to plug in a USB drive and sync all the files from my NAS to it. This can be done (pretty much an any hadrware) using rsync.
+I want to be able to plug in a USB drive and sync all the files from my NAS to it: This will give me my offsite backup for now. This can be done (pretty much on any hadrware) using rsync.
 
-I plugged in the hard drive, ran `lsblk` to see it was under `/dev/sdc1`, ran `sudo mkdir -p /mnt/vulcan` and then added this line to `/etc/fstab`:
+### Main Backup
+
+I plugged in the hard drive, ran `lsblk` and `blkid` to see that it was an exfat file system. To make it ext4, I ran `sudo mkfs.ext4 /dev/sdc1`. Then I again ran `sudo blkid /dev/sdc1` and `sudo mkdir /mnt/tgroup` before adding this line to `/etc/fstab`:
+```bash
+UUID=dbe207b0-5d6f-4776-ab72-b47681a01a4f /mnt/tgroup ext4 defaults 0 2
+```
+
+I then mounted it with `sudo mount -a`. To backup everything except the Jellyfin directory, I ran `backup_zb.sh`:
+```bash
+#!/bin/bash
+
+# Exit on error
+set -e
+
+# Variables
+MOUNT_POINT="/mnt/tgroup"
+SRC="/mnt/raid1/"
+DST="$MOUNT_POINT/"
+
+# Ensure mount point is valid
+if ! mountpoint -q "$MOUNT_POINT"; then
+	echo "$MOUNT_POINT is not mounted."
+	exit 1
+fi
+
+# rsync backup
+rsync -av --info=progress2 --partial --update --delete --exclude 'backup_zb.txt' --exclude 'backup_zb.log' --exclude 'Jellyfin/' "$SRC" "$DST" | tee -a "$MOUNT_POINT/backup_zb.log"
+
+# Write updated timestamp 
+echo "Last updated on $(date +"%Y-%m-%d at %H:%M:%S")" > "$MOUNT_POINT/backup_zb.txt"
+echo "ZimaBlade backup is complete."
+
+# Unmount for safety
+sudo umount "$MOUNT_POINT"
+echo "$MOUNT_POINT is unmounted."
+```
+
+First by making it executible with `chmod +x backup_zb.sh`. I also found I had to run `sudo chown -R driggs:driggs /mnt/tgroup` to get permissions (I also could have added `sudo` to all my commands in the script).
+
+
+### Jellyfin Backup
+
+I plugged in the hard drive, ran `lsblk` and `blkid` to see it was under `/dev/sdc1` (this drive was already ext4), then ran `sudo mkdir -p /mnt/vulcan` and then added this line to `/etc/fstab`:
 ```bash
 UUID=0d54899d-3381-4689-9546-3a864ec754a2 /mnt/vulcan ext4 defaults 0 2
 ```
@@ -305,7 +347,6 @@ SRC="/mnt/raid1/Jellyfin/"
 DST="$MOUNT_POINT/Jellyfin/"
 
 # Ensure mount point is valid
-sudo mount "$MOUNT_POINT"
 if ! mountpoint -q "$MOUNT_POINT"; then
 	echo "$MOUNT_POINT is not mounted."
 	exit 1
@@ -322,42 +363,6 @@ rsync -av --info=progress2 --partial --update --delete --exclude 'backup_jf.txt'
 	tree "$SRC/Shows"
 } > "$MOUNT_POINT/backup_jf.txt"
 echo "Jellyfin backup is complete."
-
-# Unmount for safety
-sudo umount "$MOUNT_POINT"
-echo "$MOUNT_POINT is unmounted."
-```
-
-I followed the same step by plugging in the next drive, ran `sudo mkdir -p /mnt/tgroup`, added this line to `/etc/fstab`, and then ran `sudo mount -a` to mount it:
-```bash
-UUID=0d54899d-3381-4689-9546-3a864ec754a2 /mnt/tgroup ext4 defaults 0 2
-```
-
-To backup the rest of my stuff, I ran `backup_zb.sh`:
-```bash
-#!/bin/bash
-
-# Exit on error
-set -e
-
-# Variables
-MOUNT_POINT="/mnt/tgroup"
-SRC="/mnt/raid1/"
-DST="$MOUNT_POINT/"
-
-# Ensure mount point is valid
-sudo mount "$MOUNT_POINT"
-if ! mountpoint -q "$MOUNT_POINT"; then
-	echo "$MOUNT_POINT is not mounted."
-	exit 1
-fi
-
-# rsync backup
-rsync -av --info=progress2 --partial --update --delete --exclude 'backup_zb.txt' --exclude 'backup_zb.log' --exclude 'Jellyfin/' "$SRC" "$DST" | tee -a "$MOUNT_POINT/backup_zb.log"
-
-# Write updated timestamp 
-echo "Last updated on $(date +"%Y-%m-%d at %H:%M:%S")" > "$MOUNT_POINT/backup_zb.txt"
-echo "ZimaBlade backup is complete."
 
 # Unmount for safety
 sudo umount "$MOUNT_POINT"
