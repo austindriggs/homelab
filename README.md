@@ -38,11 +38,10 @@ Click the name in the "SERVICE" column to go to its user guide.
 **[`^ back to top ^`](#summary)**
 
 Setup:
-1. Download the Tailscale app from the app store.
-2. Sign in with your google account (either mine, mom's, or the guest gmail account).
-3. When asked what Tailnet you want to join, select MY email, not the one you just signed in with.
-4. Allow any VPN access that Tailscale needs in your phone's settings.
-5. For any more documentation notes, see [./driggs-zb/debian/](./driggs-zb/debian/README.md#tailscale).
+1. Download the Tailscale app from the app store. Allow any VPN access that Tailscale needs in your phone's settings.
+2. Sign in via google account (either mine, mom's, or the guest gmail account).
+3. When asked to "select a tailnet", select MY EMAIL, no matter which one you just signed in wit
+4. For any more documentation notes, see [./driggs-zb/debian/](./driggs-zb/debian/README.md#tailscale).
 
 
 ### IMMICH
@@ -64,11 +63,10 @@ Setup:
 
 Setup:
 1. Verify you are connected to [Tailscale](#tailscale) (follow the guide above if not).
-2. Download the Jellyfin app from the app store (not Swiftfin). Alternatively, you can type the URL below into a browser.
+2. Download the Jellyfin app from the app store (not Swiftfin). Alternatively, you can type the URL below into a browser if you don't want to download the app.
 3. Enter `http://driggs-zb:8074` for the URL (not HTTPS).
-4. Sign in with your username and password that I've given you.
-5. You can configure any settings you want.
-6. For any more documentation notes, see [./driggs-zb/docker/jellyfin/](./driggs-zb/docker/jellyfin/README.md)
+4. Sign in with your username and password that I've given you. You can configure any settings you want.
+5. For any more documentation notes, see [./driggs-zb/docker/jellyfin/](./driggs-zb/docker/jellyfin/README.md)
 
 Downloading Movies for Offline Use:
 1. To download movies from the Jellyfin app or website, you need to be on a laptop or tablet, as far as I know this doesn't work on an iPhone.
