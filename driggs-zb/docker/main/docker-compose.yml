@@ -25,3 +25,12 @@ services:
       - 22000:22000/udp
       - 21027:21027/udp
     restart: unless-stopped
+
+  uptime-kuma:
+    image: louislam/uptime-kuma:1
+    container_name: uptime-kuma
+    volumes:
+      - /docker/uptime-kuma/data:/app/data
+    ports:
+      - 8034:3001
+    restart: unless-stopped

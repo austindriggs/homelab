@@ -17,4 +17,4 @@ Then, download and install the Portainer Server container (note I changed the ho
 docker run -d -p 8000:8000 -p 8097:9443 --name portainer --restart=always -v /var/run/docker.sock:/var/run/docker.sock -v portainer_data:/data portainer/portainer-ce:lts
 ```
 
-Verify installation with `docker ps` and then navigate to `https://driggs-zb:8097`.
+Verify installation with `docker ps` and then navigate to `https://driggs-zb:8097`. After that, I run everything through the stacks which are each stored in this `docker` folder.

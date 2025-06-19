@@ -15,12 +15,12 @@ services:
       - 8074:8096
     restart: unless-stopped
 
-  jellystat-db:
-    image: postgres:15.2
-    container_name: jellystat-db
+  jellyseerr:
+    image: fallenbagel/jellyseerr:latest
+    container_name: jellyseerr
     restart: unless-stopped
-    environment:
-      POSTGRES_USER: postgres
-      POSTGRES_PASSWORD: mypassword
+    ports:
+      - 8075:5055
     volumes:
-      - /docker/jellyfin/stats/postgres:/var/lib/postgresql/data
+      - /docker/jellyseerr/config:/app/config
+      - /mnt/raid1/Jellyfin:/jellyfin

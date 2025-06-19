@@ -1,5 +1,7 @@
 # Jellyfin
 
+## OVERVIEW
+
 Jellyfin is used to manage media via a modern interface:
 - Access my parents large DVD collection of shows and movies that I've ripped.
 - Homemade videos from Christmas, soccer, vacations (skydiving, snorkeling), and other occasions.
