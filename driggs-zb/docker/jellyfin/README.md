@@ -22,3 +22,5 @@ http://driggs-zb:8074/web/index.html#!/wizardstart.html
 ## Jellyseerr
 
 :TODO:
+
+can't use `http://driggs-zb:8074`, have to use IP address. might have to use /web in the URL thing?
