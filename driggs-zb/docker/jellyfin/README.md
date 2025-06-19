@@ -13,3 +13,12 @@ To login after first startup, navigate to:
 ```
 http://driggs-zb:8074/web/index.html#!/wizardstart.html
 ```
+
+## Jellyfin
+
+:TODO:
+
+
+## Jellyseerr
+
+:TODO:
