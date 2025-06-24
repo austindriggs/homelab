@@ -26,7 +26,9 @@ Click the name in the "SERVICE" column to go to its user guide.
 | x      | Glance                  | Homepage to monitor and link to apps | 8080 |
 | x      | Syncthing               | Sync files between devices           | 8057 |
 |        | Immich                  | Photo library for me                 | 8013 |
-| x      | [Immich](#immich)       | Photo library for my parents         | 8019 |
+|        | Immich Frame            | Digital picture frame for me         | 8014 |
+| x      | [Immich](#immich)       | Photo library for my parents         | 8094 |
+| x      | Immich Frame            | Digital picture frame for my parents | 8019 |
 | x      | [Jellyfin](#jellyfin)   | Video library for me and my parents  | 8074 |
 |        | Jellystat               | Video library statistics             | 8075 |
 
