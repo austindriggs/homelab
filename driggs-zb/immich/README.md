@@ -43,6 +43,19 @@ Run it, and follow the prompted instructions:
 
 
 
+
+
+
+
+
+
+
+
 ## Parents
 
 I created a second instance of Immich (for now) where I uploaded my parents photos on port 8019. I added an External Library with `parents` owner and let the jobs run for a while. 
+
+
+### Parents Frame
+
+I setup ImmichFrame on my server side by using their [docker compose setup](https://immichframe.online/docs/getting-started/installation/docker) in their docs. See [parents-frame](./../../parents-frame/README.md) for more.
