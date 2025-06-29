@@ -11,7 +11,7 @@ Click the name in the "SERVICE" column to go to its user guide.
 
 | STATUS | SERVICE                  | DESCRIPTION                                                                                      | LOCATION                                             |
 | ------ | ------------------------ | ------------------------------------------------------------------------------------------------ | ---------------------------------------------------- |
-| x      | SSH                      | SSH over local network                                                                           | 127.16.58.224                                        |
+| x      | SSH                      | SSH over local network                                                                           | 172.16.58.224                                        |
 | x      | Docker                   | Used to install apps                                                                             | `docker ps`                                          |
 | x      | mdadm                    | Used for software RAID1 to mirror my two hard drives                                             | `sudo mdadm --detail /dev/md0` or `cat /proc/mdstat` |
 | x      | [Tailscale](#tailscale)  | Mesh VPN to connect                                                                              | 100.126.109.100                                      |
