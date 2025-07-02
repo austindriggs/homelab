@@ -1,0 +1,43 @@
+{
+  "General": {
+    "AuthenticationSecret": null,
+    "DownloadImages": false,
+    "RenewImagesDuration": 30,
+    "Webcalendars": [],
+    "RefreshAlbumPeopleInterval": 12,
+    "PhotoDateFormat": "MM/dd/yyyy",
+    "ImageLocationFormat": "City,State,Country",
+    "WeatherApiKey": "",
+    "UnitSystem": "imperial",
+    "WeatherLatLong": "40.730610,-73.935242",
+    "Language": "en",
+    "Webhook": null,
+    "Margin": "0,0,0,0",
+    "Interval": 30,
+    "TransitionDuration": 2,
+    "ShowClock": true,
+    "ClockFormat": "hh:mm",
+    "ShowProgressBar": false,
+    "ShowPhotoDate": true,
+    "ShowImageDesc": false,
+    "ShowPeopleDesc": false,
+    "ShowAlbumName": false,
+    "ShowImageLocation": false,
+    "PrimaryColor": "#f5deb3",
+    "SecondaryColor": "#000000",
+    "Style": "none",
+    "BaseFontSize": "17px",
+    "ShowWeatherDescription": false,
+    "UnattendedMode": true,
+    "ImageZoom": false,
+    "ImagePan": false,
+    "ImageFill": false,
+    "Layout": "single"
+  },
+  "Accounts": [
+    {
+      "ImmichServerUrl": "http://driggs-zb:8019",
+      "ApiKey": "api_key_goes_here"
+    }
+  ]
+}
