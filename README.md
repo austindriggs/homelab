@@ -55,7 +55,7 @@ Setup:
 3. Enter `http://driggs-zb:8019` for the URL (not HTTPS).
 4. Sign in using your regular email address and the password I've given you. The only emails you'll ever get are directly from me.
 5. Setup any user settings, but do not choose to backup any photos to Immich. You should continue to back up to Google Photos and a regular hard drive.
-6. For any more documentation notes, see [./driggs-zb/docker/immich/](./driggs-zb/docker/immich/README.md).
+6. For any more documentation notes, see [./driggs-zb/immich/](./driggs-zb/immich/README.md).
 
 
 ### IMMICH KIOSK
@@ -66,7 +66,7 @@ Setup:
 1. Verify you are connected to [Tailscale](#tailscale) (follow the guide above if not).
 2. Download the Immich Kiosk app from the app store, Alternatively, you can type the URL below into a browser.
 3. Enter `http://driggs-zb:8014` for the URL (not HTTPS).
-4. For any more documentation notes or URL options, see [./driggs-zb/docker/immich-kiosk/](./driggs-zb/docker/immich-kiosk/README.md).
+4. For any more documentation notes or URL options, see [./driggs-zb/immich-kiosk/](./driggs-zb/immich-kiosk/README.md).
 
 
 
@@ -79,7 +79,7 @@ Setup:
 2. Download the Jellyfin app from the app store (not Swiftfin). Alternatively, you can type the URL below into a browser if you don't want to download the app.
 3. Enter `http://driggs-zb:8074` for the URL (not HTTPS).
 4. Sign in with your username and password that I've given you. You can configure any settings you want.
-5. For any more documentation notes, see [./driggs-zb/docker/jellyfin/](./driggs-zb/docker/jellyfin/README.md)
+5. For any more documentation notes, see [./driggs-zb/jellyfin/](./driggs-zb/jellyfin/README.md)
 
 Downloading Movies for Offline Use:
 1. To download movies from the Jellyfin app or website, you need to be on a laptop or tablet, as far as I know this doesn't work on an iPhone.
