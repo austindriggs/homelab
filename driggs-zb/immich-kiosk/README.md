@@ -40,7 +40,7 @@ services:
 
 ## USE CASE
 
-I then use any device to navigate to `http://driggs-zb:8014" and am greeted with a slideshow of all of my pictures from Immich.
+I then use any device to navigate to `http://driggs-zb:8014` and am greeted with a slideshow of all of my pictures from Immich.
 
 To get a specific album, use the `ALBUM_ID` from `http://driggs-zb:8019/albums/ALBUM_ID` in the Immich URL in the Immich Kiosk URL:
 ```
