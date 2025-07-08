@@ -20,22 +20,21 @@ Click the name in the "SERVICE" column to go to its user guide.
 
 ### DOCKER APPS
 
-| STATUS | SERVICE                 | DESCRIPTION                          | PORT |
-| ------ | ----------------------- | ------------------------------------ | ---- |
-| x      | Portainer               | Managing docker apps                 | 8097 |
-| x      | Glance                  | Homepage to monitor and link to apps | 8080 |
-| x      | Syncthing               | Sync files between devices           | 8057 |
-|        | Immich                  | Photo library for me                 | 8013 |
-|        | Immich Frame            | Digital picture frame for me         | 8014 |
-| x      | [Immich](#immich)       | Photo library for my parents         | 8094 |
-| x      | Immich Frame            | Digital picture frame for my parents | 8019 |
-| x      | [Jellyfin](#jellyfin)   | Video library for me and my parents  | 8074 |
-|        | Jellystat               | Video library statistics             | 8075 |
+| STATUS | SERVICE                       | DESCRIPTION                          | PORT |
+| ------ | ----------------------------- | ------------------------------------ | ---- |
+| x      | Portainer                     | Managing docker apps                 | 8097 |
+| x      | Glance                        | Homepage to monitor and link to apps | 8080 |
+| x      | Syncthing                     | Sync files between devices           | 8057 |
+|        | Immich                        | Photo library for me                 | 8013 |
+| x      | [Immich](#immich)             | Photo library for my parents         | 8019 |
+|        | [Immich Frame](#immich-kiosk) | Digital picture frame for me         | 8014 |
+| x      | [Jellyfin](#jellyfin)         | Video library for me and my parents  | 8074 |
+|        | Jellystat                     | Video library statistics             | 8075 |
 
 
 ## USER GUIDES
 
-### Tailscale
+### TAILSCALE
 
 **[`^ back to top ^`](#summary)**
 
@@ -57,6 +56,18 @@ Setup:
 4. Sign in using your regular email address and the password I've given you. The only emails you'll ever get are directly from me.
 5. Setup any user settings, but do not choose to backup any photos to Immich. You should continue to back up to Google Photos and a regular hard drive.
 6. For any more documentation notes, see [./driggs-zb/docker/immich/](./driggs-zb/docker/immich/README.md).
+
+
+### IMMICH KIOSK
+
+**[`^ back to top ^`](#summary)**
+
+Setup:
+1. Verify you are connected to [Tailscale](#tailscale) (follow the guide above if not).
+2. Download the Immich Kiosk app from the app store, Alternatively, you can type the URL below into a browser.
+3. Enter `http://driggs-zb:8014` for the URL (not HTTPS).
+4. For any more documentation notes or URL options, see [./driggs-zb/docker/immich-kiosk/](./driggs-zb/docker/immich-kiosk/README.md).
+
 
 
 ### JELLYFIN
