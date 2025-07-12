@@ -100,3 +100,4 @@ Downloading Movies for Offline Use:
 - Some repositories:
 	- https://github.com/awesome-selfhosted/awesome-selfhosted
 	- https://github.com/docker/awesome-compose
+- I've learned a lot about networking and this is one of the best intro videos that covers a bunch of different topics: [Everything I Learned About Home Networking - A Newbie’s Perspective](https://youtu.be/DT2ARc1NOpM?si=a5K2GU-9xXWb3N7d) by [Jimmy Tries World](https://www.youtube.com/@JimmyTriesWorld) on YouTube.
