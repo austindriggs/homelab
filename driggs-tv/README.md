@@ -1,5 +1,11 @@
 # Driggs TV
 
+I followed: https://youtu.be/BSId-9miAFM?si=igbqvGtAR065gjJn
+
+
+
+<!---
+
 ## INTRO
 
 Raspberry Pi 4B 1GB TV box used mainly to play Jellyfin, but I also want to be able to play YouTube and cast my phone to it.
@@ -42,4 +48,4 @@ I used [Android 13 For Raspberry Pi 4 Is GOOD! And Even Better with Play Store!]
 
 ##  
 
-
+---->
