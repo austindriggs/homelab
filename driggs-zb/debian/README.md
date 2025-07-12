@@ -38,7 +38,15 @@ ff02::2 ip6-allrouters
 ```
 
 
+## Hard Drives
+
+My hard drives were refurbs from eBay. All of my work is stored in [a separate note](Initial HDDs and RAID Setup.md) because its really long.
+
+
+
 ## Docker
+
+### DOCKER SETUP
 
 Install curl:
 ```bash
@@ -104,6 +112,54 @@ Add myself to the docker group so I don't have to use `sudo` when using the dock
 ```bash
 sudo usermod -aG docker driggs
 ```
+
+### DOCKER MAINTENANCE
+
+I had Syncthing go down and log:
+```
+WARNING: Error opening database: write /config/index-v0.14.0.db/001245.ldb: no space left on device
+```
+
+I ran `dh -h` to see that my root file system was 100% full! 
+```bash
+driggs@driggs-zb:~$ df -h
+Filesystem      Size  Used Avail Use% Mounted on
+udev            3.8G     0  3.8G   0% /dev
+tmpfs           779M  3.8M  775M   1% /run
+/dev/mmcblk0p2   27G   25G     0 100% /
+tmpfs           3.9G     0  3.9G   0% /dev/shm
+tmpfs           5.0M     0  5.0M   0% /run/lock
+/dev/mmcblk0p1  511M  5.9M  506M   2% /boot/efi
+/dev/md0         11T  1.7T  8.7T  16% /mnt/raid1
+tmpfs           779M  4.0K  779M   1% /run/user/1000
+```
+
+The easiest fix for me right now is to clean up docker. I checked:
+```bash
+driggs@driggs-zb:~$ docker system df
+TYPE            TOTAL     ACTIVE    SIZE      RECLAIMABLE
+Images          20        13        10.31GB   2.994GB (29%)
+Containers      13        13        282.5kB   0B (0%)
+Local Volumes   17        4         6.808GB   5.171GB (75%)
+Build Cache     0         0         0B        0B
+driggs@driggs-zb:~$ 
+```
+
+and then cleaned up the images:
+```bash
+docker system prune -af --volumes
+```
+
+Another option that I DID NOT DO would be to move docker stuff from my EMMC storage to my hard drives but I'd imagine that would slow things down?
+```bash
+sudo systemctl stop docker
+sudo mv /var/lib/docker /mnt/raid1/docker
+sudo ln -s /mnt/raid1/docker /var/lib/docker
+sudo systemctl start docker
+```
+
+or I could get a NVMe drive and connect it through the PCIe slot on the side of my ZimaBlade.
+
 
 
 ## Portainer

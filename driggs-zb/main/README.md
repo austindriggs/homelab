@@ -1,5 +1,7 @@
 # Docker Apps
 
+This is my main stack.
+
 ## Glance
 
 Edit the `/data/compose/6/config/glance.yml` file and then restart the container.
