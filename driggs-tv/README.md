@@ -1,8 +1,11 @@
 # Driggs TV
 
-I followed: https://youtu.be/BSId-9miAFM?si=igbqvGtAR065gjJn
+I run Android TV on a Raspberri Pi 4 4GB because I really only use my TV to watch YouTube or movies on Jellyfin.
 
 
+## ANDROID TV
+
+TODO:
 
 <!---
 
@@ -49,3 +52,9 @@ I used [Android 13 For Raspberry Pi 4 Is GOOD! And Even Better with Play Store!]
 ##  
 
 ---->
+
+
+
+## RESOURCES
+
+- [How to install Android TV 15 on the Raspberry Pi 4 and use it as a media player.](https://youtu.be/BSId-9miAFM?si=XnWe60x4E0w3dme2) by [Virtually Walking](https://www.youtube.com/@virtuallywalking).
