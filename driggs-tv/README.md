@@ -35,10 +35,10 @@ Install the Google Play store:
 ### DEFAULT APPS
 
 I installed all of the apps I want:
-1. [Tailscale](driggs-zb/README.md#tailscale)
-2. [Jellyfin](driggs-zb/README.md#tailscale)
+1. [Tailscale](./README.md#tailscale)
+2. [Jellyfin](./README.md#tailscale)
 3. YouTube
-4. [Immich TV](driggs-zb/README.md#immich)
+4. [Immich TV](./README.md#immich)
 
 
 ### DRM
