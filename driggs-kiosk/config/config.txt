@@ -15,7 +15,7 @@
 #config_hdmi_boost=5
 
 # Uncomment if HDMI display is not detected and composite is being outputted.
-#hdmi_force_hotplug=1
+hdmi_force_hotplug=1
 
 # Uncomment to disable HDMI even if plugged, e.g. to force composite output.
 #hdmi_ignore_hotplug=1
@@ -30,8 +30,8 @@
 #sdtv_mode=0
 
 # Uncomment to force a specific HDMI mode (this will force VGA).
-#hdmi_group=1
-#hdmi_mode=1
+hdmi_group=2
+hdmi_mode=82
 
 # Uncomment to force an HDMI mode rather than DVI. This enables HDMI audio in DMT modes.
 #hdmi_drive=2
@@ -60,15 +60,15 @@ disable_overscan=1
 #disable_camera_led=1
 
 #-------GPU memory splits-------
-gpu_mem_256=16
-gpu_mem_512=16
-gpu_mem_1024=16
+gpu_mem_256=32
+gpu_mem_512=32
+gpu_mem_1024=32
 
 #-------Boot splash screen------
 disable_splash=1
 
 #-------Onboard sound-----------
-dtparam=audio=off
+dtparam=audio=on
 
 #-------I2C-------------
 #dtparam=i2c_arm=off
@@ -87,16 +87,17 @@ enable_uart=0
 dtparam=sd_poll_once
 
 #-------Overclock-------
-temp_limit=65
+temp_limit=75
 initial_turbo=20
 
 #over_voltage=0
-#arm_freq=900
-#core_freq=250
-#sdram_freq=400
+#arm_freq=1500
+#core_freq=500
 
 #over_voltage_min=0
 #arm_freq_min=300
 #core_freq_min=250
 #sdram_freq_min=400
 arm_64bit=1
+dtoverlay=disable-wifi
+dtoverlay=vc4-kms-v3d
