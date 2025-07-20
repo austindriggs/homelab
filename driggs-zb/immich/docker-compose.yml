@@ -74,16 +74,6 @@ services:
       start_period: 5m
     command: >-
       postgres -c shared_preload_libraries=vectors.so -c 'search_path="$$user", public, vectors' -c logging_collector=on -c max_wal_size=2GB -c shared_buffers=512MB -c wal_compression=on
-    restart: always
-
-  immichframe:
-    container_name: immichframe
-    image: ghcr.io/immichframe/immichframe:latest
-    restart: on-failure
-    volumes:
-      - /docker/immich-frame:/app/config
-    ports:
-      - "8094:8080"
 
 volumes:
   model-cache:

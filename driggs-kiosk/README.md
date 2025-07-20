@@ -5,6 +5,11 @@ This is a client that displays images from my Immich server and displays them on
 TODO_IMAGE
 
 
+## MECHANICAL
+
+Link to [OnShape](https://cad.onshape.com/documents/901e44520d09302b4769db07/w/7f6152680e5b4d4d12965abd/e/af289ec28914687e9adaa4db?renderMode=0&uiState=6879c4c0cf45ab7439c8b12a) 3D model, stored in the [driggs-kiosk/mech/] folder.
+
+
 ## HARDWARE
 
 - [15.6 in Portable Monitor](https://www.amazon.com/dp/B0D2D8CCY1) with:
@@ -16,32 +21,24 @@ TODO_IMAGE
     - Looks good. A lot of them look bad.
 - [12V 5A Power Supply](https://www.amazon.com/dp/B0CW2PJQLJ)
 - [12V in to 5V 5A out Power Adapter]()
-- [Raspberry Pi 4 1GB](https://www.canakit.com/raspberry-pi-4.html)
+- [Raspberry Pi 4 1GB](https://www.canakit.com/raspberry-pi-4.html) (or Raspberry Pi Zero 2 W)
 - HDMI to Micro HDMI cable
 - Micro SD card
 - Command strips
 - Soldering iron and heatshrink
 
 
-## OPERATING SYSTEM
+## SOFTWARE
 
 Diet Pi OS is a lighter version of the Raspberry Pi OS that enables my limited Raspberry Pi Zero 2W to run significalty faster.
 1. [Download for Raspberry Pi 4](https://dietpi.com/?ref=fanyangmeng.blog#downloadinfo)
 2. [How to install DietPi](https://dietpi.com/docs/install/)
 
 
-I changed the following lines in the [dietpi.txt](dietpi.txt) config:
+I edited the files stored in the [driggs-kiosk/rpi4/] folder by following the docs on [deitpi's website](https://dietpi.com/docs/software/desktop/#chromium). When I booted into chromium, it was extremely blurry, so I disabled hardware acceleration in chromium:
+```bash
+chromium-browser --disable-gpu http://driggs-zb:8014
 ```
-TODO, hostname
-```
-
-Once logged in, install Chromium after running:
-```
-dietpi-software
-```
-
-
-
 
 
 Install Tailscale and follow the prompts after running:
@@ -49,26 +46,8 @@ Install Tailscale and follow the prompts after running:
 curl -fsSL https://tailscale.com/install.sh | sh
 ```
 
-Finally, install unclutter so we can hide the mouse later:
-```bash
-sudo apt install unclutter
-```
-
-
-## KIOSK MODE
-
-https://dietpi.com/docs/software/desktop/#chromium
-
-
-
-
-
-this was extremely blurry. to fix it, disable hardware acceleration in chromium:
-```bash
-chromium-browser --disable-gpu
-```
-
 
 ## MONITORING
 
-!FUTURE!
+!FUTURE!:
+- What happens when Wifi goes down?
