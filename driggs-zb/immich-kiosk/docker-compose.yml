@@ -10,7 +10,7 @@ services:
       # Required settings
       KIOSK_IMMICH_URL: "http://172.16.58.224:8019"
       # Kiosk behaviour
-      KIOSK_REFRESH: 15
+      KIOSK_REFRESH: 10
       # UI
       KIOSK_HIDE_CURSOR: true
       KIOSK_THEME: fade
@@ -21,7 +21,7 @@ services:
       KIOSK_IMAGE_DATE_FORMAT: YYYY-MM-DD
       KIOSK_SHOW_IMAGE_LOCATION: true
     env_file:
-      - stack.env # KIOSK_IMMICH_API_KEY
+      - stack.env
     ports:
       - 8014:3000
     restart: always
