@@ -59,7 +59,9 @@ Everything on the NAS is backed up monthly to an external SSD.
 
 ## ntfy
 
-:TODO:
+ntfy (pronounced notify) is a simple HTTP-based pub-sub notification service. It allows you to send notifications to your phone or desktop via scripts from any computer, and/or using a REST API. It's infinitely flexible, and 100% free software.
+
+See more at https://ntfy.sh/.
 
 
 ## Uptime Kuma
