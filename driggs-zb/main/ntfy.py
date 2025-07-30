@@ -35,11 +35,11 @@ def check_raid(frequency):
 			if failed > 0:
 				send_ntfy(f"RAID FAILED: {failed}", status, 5)
 			elif frequency == "weekly":
-                # 0 17 * * 5 /usr/bin/python3 /docker/ntfy/sys.py weekly
+		                # 0 17 * * 5 /usr/bin/python3 /docker/ntfy/ntfy.py weekly
 				send_ntfy(f"RAID PASSED: {failed}", status, 3)
-			else: 
-                # 0 12 * * * /usr/bin/python3 /docker/ntfy/sys.py daily
-                return
+			else:
+               			 # 0 12 * * * /usr/bin/python3 /docker/ntfy/ntfy.py daily
+                		return
 
 if __name__ == "__main__":
 	frequency = sys.argv[1]
