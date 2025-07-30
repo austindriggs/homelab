@@ -25,9 +25,10 @@ Click the name in the "SERVICE" column to go to its user guide.
 | x      | Portainer                     | Managing docker apps                 | 8097 |
 | x      | Glance                        | Homepage to monitor and link to apps | 8080 |
 | x      | Syncthing                     | Sync files between devices           | 8057 |
+| x      | [ntfy](#ntfy)                 | Pub-sub notification service         | 8047 |
 |        | Immich                        | Photo library for me                 | 8013 |
 | x      | [Immich](#immich)             | Photo library for my parents         | 8019 |
-|        | [Immich Frame](#immich-kiosk) | Digital picture frame for me         | 8014 |
+|        | [Immich Kiosk](#immich-kiosk) | Digital picture frame                | 8014 |
 | x      | [Jellyfin](#jellyfin)         | Video library for me and my parents  | 8074 |
 |        | Jellystat                     | Video library statistics             | 8075 |
 
@@ -43,6 +44,18 @@ Setup:
 2. Sign in via google account (either mine, mom's, or the guest gmail account).
 3. When asked to "select a tailnet", select MY EMAIL, no matter which one you just signed in wit
 4. For any more documentation notes, see [./driggs-zb/debian/](./driggs-zb/debian/README.md#tailscale).
+
+
+### NTFY
+
+**[`^ back to top ^`](#summary)**
+
+Setup:
+1. Verify you are connected to [Tailscale](#tailscale) (follow the guide above if not).
+2. Download the ntfy app from the app store. Alternatively, you can type the URL below into a browser.
+3. Enter `http://driggs-zb:8047` for the URL in the settings section (not HTTPS).
+4. Subscribe to apps you are using by entering the app name.
+6. For any more documentation notes, see [./driggs-zb/main/](./driggs-zb/main/README.md#ntfy).
 
 
 ### IMMICH

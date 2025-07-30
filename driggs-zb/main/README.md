@@ -57,6 +57,11 @@ driggs@driggs-zb:/mnt/raid1$ tree -d
 Everything on the NAS is backed up monthly to an external SSD.
 
 
+## ntfy
+
+:TODO:
+
+
 ## Uptime Kuma
 
 
