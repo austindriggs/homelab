@@ -20,6 +20,7 @@ services:
     volumes:
       - /docker/syncthing/config:/config
       - /mnt/raid1:/mnt/raid1
+      - /docker:/docker
     ports:
       - 8057:8384
       - 22000:22000/tcp
