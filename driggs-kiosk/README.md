@@ -7,7 +7,7 @@ TODO_IMAGE
 
 ## MECHANICAL
 
-Link to [OnShape](https://cad.onshape.com/documents/901e44520d09302b4769db07/w/7f6152680e5b4d4d12965abd/e/af289ec28914687e9adaa4db?renderMode=0&uiState=6879c4c0cf45ab7439c8b12a) 3D model, stored in the [driggs-kiosk/mech/] folder.
+Link to [OnShape](https://cad.onshape.com/documents?nodeId=6f4d76e23843bc47101345e0&resourceType=folder) 3D model, stored in the [driggs-kiosk/mech/] folder.
 
 
 ## HARDWARE
