@@ -7,7 +7,7 @@ TODO_IMAGE
 
 ## MECHANICAL
 
-Link to [OnShape](https://cad.onshape.com/documents?nodeId=6f4d76e23843bc47101345e0&resourceType=folder) 3D model, stored in the [driggs-kiosk/mech/] folder:
+Link to [OnShape](https://cad.onshape.com/documents?nodeId=6f4d76e23843bc47101345e0&resourceType=folder) 3D model, stored in the [mech](mech/) folder:
 
 ![mech](.imgs/driggs-kiosk-rpi4-assembly.png)
 
