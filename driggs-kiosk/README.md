@@ -3,7 +3,7 @@
 This is a client that displays images from my Immich server and displays them onto a digital picture frame I made with a Raspberry Pi and portable monitor.
 
 <a href="https://www.youtube.com/watch?v=NeSkeHkIKjA" target="_blank">
-  <img src="https://img.youtube.com/vi/NeSkeHkIKjA/0.jpg" width="800">
+  <img src=".imgs/driggs-kiosk.JPG" alt="Driggs Kiosk Demo" width="1000" style="border:0;">
 </a>
 
 
