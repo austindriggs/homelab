@@ -2,7 +2,7 @@
 
 This is a client that displays images from my Immich server and displays them onto a digital picture frame I made with a Raspberry Pi and portable monitor.
 
-![](.imgs/driggs-kiosk.mp4)
+[![Watch the demo](https://img.youtube.com/vi/NeSkeHkIKjA/0.jpg)](https://www.youtube.com/watch?v=NeSkeHkIKjA)
 
 
 ## MECHANICAL
