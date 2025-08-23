@@ -2,7 +2,9 @@
 
 This is a client that displays images from my Immich server and displays them onto a digital picture frame I made with a Raspberry Pi and portable monitor.
 
-[![Watch the demo](https://img.youtube.com/vi/NeSkeHkIKjA/0.jpg)](https://www.youtube.com/watch?v=NeSkeHkIKjA)
+<a href="https://www.youtube.com/watch?v=NeSkeHkIKjA" target="_blank">
+  <img src="https://img.youtube.com/vi/NeSkeHkIKjA/0.jpg" width="800">
+</a>
 
 
 ## MECHANICAL
