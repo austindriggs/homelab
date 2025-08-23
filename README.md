@@ -79,7 +79,7 @@ Setup:
 1. Verify you are connected to [Tailscale](#tailscale) (follow the guide above if not).
 2. Download the Immich Kiosk app from the app store, Alternatively, you can type the URL below into a browser.
 3. Enter `http://driggs-zb:8014` for the URL (not HTTPS).
-4. For any more documentation notes or URL options, see [./driggs-zb/immich-kiosk/](./driggs-zb/immich-kiosk/README.md).
+4. For any more documentation notes or URL options, see [driggs-kiosk/](driggs-kiosk/) or [./driggs-zb/immich-kiosk/](./driggs-zb/immich-kiosk/).
 
 
 

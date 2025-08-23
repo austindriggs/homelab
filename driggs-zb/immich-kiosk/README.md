@@ -3,6 +3,11 @@
 For my parents. See the [immich-kiosk](https://github.com/damongolding/immich-kiosk) GitHub repo for more info.
 
 
+## CLIENT
+
+For client side notes, see [driggs-kiosk/](../../driggs-kiosk/).
+
+
 ## CONFIG
 
 I created the environment variables using their [Installation](https://docs.immichkiosk.app/configuration/#docker-composeyaml-with-env) for Docker Compose with the options shown in [Configuration](https://docs.immichkiosk.app/configuration/#docker-composeyaml-with-env) (with env).
