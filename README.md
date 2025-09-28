@@ -20,17 +20,18 @@ Click the name in the "SERVICE" column to go to its user guide.
 
 ### DOCKER APPS
 
-| STATUS | SERVICE                       | DESCRIPTION                          | PORT |
-| ------ | ----------------------------- | ------------------------------------ | ---- |
-| x      | Portainer                     | Managing docker apps                 | 8097 |
-| x      | Glance                        | Homepage to monitor and link to apps | 8080 |
-| x      | Syncthing                     | Sync files between devices           | 8057 |
-| x      | [ntfy](#ntfy)                 | Pub-sub notification service         | 8047 |
-|        | Immich                        | Photo library for me                 | 8013 |
-| x      | [Immich](#immich)             | Photo library for my parents         | 8019 |
-|        | [Immich Kiosk](#immich-kiosk) | Digital picture frame                | 8014 |
-| x      | [Jellyfin](#jellyfin)         | Video library for me and my parents  | 8074 |
-|        | Jellystat                     | Video library statistics             | 8075 |
+| STATUS | SERVICE                       | DESCRIPTION                          | PORT | NTFY TOPIC   |
+| ------ | ----------------------------- | ------------------------------------ | ---- | ------------ |
+| x      | Portainer                     | Managing docker apps                 | 8097 | main         |
+| x      | Glance                        | Homepage to monitor and link to apps | 8080 | main         |
+| x      | Syncthing                     | Sync files between devices           | 8057 | main         |
+| x      | [ntfy](#ntfy)                 | Pub-sub notification service         | 8047 | main         |
+|        | Immich                        | Photo library for me                 | 8013 |              |
+| x      | [Immich](#immich)             | Photo library for my parents         | 8019 |              |
+| x      | [Immich Kiosk](#immich-kiosk) | Digital picture frame                | 8014 | Immich-Kiosk |
+| x      | [Jellyfin](#jellyfin)         | Video library for me and my parents  | 8074 | Jellyfin     |
+| x      | Jellyseer                     | Video library requests and status    | 8075 | Jellyfin     |
+|        | Jellystat                     | Video library statistics             | 8076 | Jellyfin     |
 
 
 ## USER GUIDES
@@ -54,7 +55,7 @@ Setup:
 1. Verify you are connected to [Tailscale](#tailscale) (follow the guide above if not).
 2. Download the ntfy app from the app store. Alternatively, you can type the URL below into a browser.
 3. Enter `http://driggs-zb:8047` for the URL in the settings section (not HTTPS).
-4. Subscribe to apps you are using by entering the app name.
+4. Subscribe to apps you are using by entering the app name as the topic (see the `NTFY TOPIC` column in the table above).
 6. For any more documentation notes, see [./driggs-zb/main/](./driggs-zb/main/README.md#ntfy).
 
 
@@ -93,6 +94,19 @@ Setup:
 3. Enter `http://driggs-zb:8074` for the URL (not HTTPS).
 4. Sign in with your username and password that I've given you. You can configure any settings you want.
 5. For any more documentation notes, see [./driggs-zb/jellyfin/](./driggs-zb/jellyfin/README.md)
+
+Jellyseer:
+1. Verify you are connected to [Tailscale](#tailscale) (follow the guide above if not).
+2. Download the Jellyseer app from the app store. Alternatively, you can type the URL below into a browser if you don't want to download the app.
+3. Enter `http://driggs-zb:8074` for the URL (not HTTPS) if you are prompted to do so.
+4. Sign in with your same Jellyfin username and password that I've given you. You can configure any settings you want.
+5. For any more documentation notes, see [./driggs-zb/jellyfin/](./driggs-zb/jellyfin/README.md)
+
+Notifications:
+1. If you want to enable notifications for this app, you need to install and setup [ntfy](#ntfy) above and subscribe to the `Jellyfin` topic.
+2. Most notifications for the Jellyfin app will come from Jellyseer. When you make a new movie request, you will get a notification.
+3. When new media is added to Jellyfin, you will get a notification that the media has been approved.
+4. Other notifications will come from scripts that I've wrote. For any more documentation notes, see [./driggs-zb/jellyfin/](./driggs-zb/jellyfin/README.md)
 
 Downloading Movies for Offline Use:
 1. To download movies from the Jellyfin app or website, you need to be on a laptop or tablet, as far as I know this doesn't work on an iPhone.
