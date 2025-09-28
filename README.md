@@ -104,8 +104,8 @@ Jellyseer:
 
 Notifications:
 1. If you want to enable notifications for this app, you need to install and setup [ntfy](#ntfy) above and subscribe to the `Jellyfin` topic.
-2. Most notifications for the Jellyfin app will come from Jellyseer. When you make a new movie request, you will get a notification.
-3. When new media is added to Jellyfin, you will get a notification that the media has been approved.
+2. Most notifications for the Jellyfin app are automatically sent by Jellyseer, although you don't need to download and setup Jellyseer to get notifications.
+3. When you make a request, when media gets approved (or denied if its unavailable), or when media is added, a notification be sent through ntfy.
 4. Other notifications will come from scripts that I've wrote. For any more documentation notes, see [./driggs-zb/jellyfin/](./driggs-zb/jellyfin/README.md)
 
 Downloading Movies for Offline Use:
