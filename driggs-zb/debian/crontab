@@ -23,6 +23,10 @@
 # m h  dom mon dow   command
 PATH=/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin
 
-# Check system status daily and weekly:
-0 12 * * * /usr/bin/python3 /docker/ntfy/ntfy.py daily
-0 17 * * 5 /usr/bin/python3 /docker/ntfy/ntfy.py weekly
+
+
+# Check system status daily at 6am and every friday at 5pm:
+0 6 * * * /usr/bin/python3 /docker/ntfy/ntfy_debian.py daily
+0 17 * * 5 /usr/bin/python3 /docker/ntfy/ntfy_debian.py weekly
+# Test every minute:
+#* * * * * /usr/bin/python3 /docker/ntfy/ntfy.py weekly >> /tmp/ntfy_test.log 2>&1
