@@ -1,2 +1,6 @@
+# secrets
 .hidden*
 *.env
+
+# development
+selected
