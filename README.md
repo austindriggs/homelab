@@ -1,6 +1,8 @@
 # Austin's Homelab
 
-My apartment-lab documentation. The inital goal was to self-host all of the terabyte of pictures and videos that my parents have taken over the last few decades, but has grown into a file-backup NAS, home automation system, movie and show library, and more!
+The inital goal of my homelab was to self-host terabytes of family pictures and videos collected over the last few decades, but has grown into a file-backup NAS, home automation system, media library, and more!
+
+The primary server is the [ZimaBlade 7700](./driggs-zb/README.md) (NAS Kit) running Debian with Docker containers for most applications.
 
 
 ## SUMMARY
