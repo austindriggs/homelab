@@ -7,7 +7,11 @@ I installed using their instructions at: https://immich.app/docs/install/portain
 - [my FINAL pick for a self-hosted photo server - immich](https://youtu.be/s1ufPvO0BVE?si=JrExTVNUj2ICqVRa) by [TechHut](https://www.youtube.com/@TechHut)
 - [Louis Rossmann Shows You How to Install Immich](https://youtu.be/HxNOgKeIiDY?si=59dKuep8-htdUofG) by [FUTO](https://www.youtube.com/@FUTOTECH)
 
-I then created a second instance of everything, renaming all the containers with `<name>-parents` so there's no conflicts, and mapped it to port 8019 instead of 8013.
+Originally, I created a second instance of everything, renaming all the containers with `<name>-parents` so there's no conflicts, and mapped it to port 8019 instead of 8013. I realized the better solution is to have a single stack with multiple users inside of the app itself, and kept the app on port 8019. This has several benifits:
+- Centralized maintenance and updates, as I only need to update a single Docker Compose stack and image set.
+- Unified backup strategy, allowing me to protect all family data with a single database dump and file system sync.
+- Improved search and discovery features (like facial recognition) benefit from a larger, unified dataset if we choose to share assets.
+- And most importantly, its simpler to share albums or photos with my parents library.
 
 
 ## Google Takeout
@@ -47,15 +51,11 @@ Run it, and follow the prompted instructions:
 
 
 
+ 
 
 
+### Immich Kiosk
 
+I setup Immich Kiosk on my server to enable (randomized) slideshows on digital picture frames that I've made. 
 
-## Parents
-
-I created a second instance of Immich (for now) where I uploaded my parents photos on port 8019. I added an External Library with `parents` owner and let the jobs run for a while. 
-
-
-### Parents Frame
-
-I setup ImmichFrame on my server side by using their [docker compose setup](https://immichframe.online/docs/getting-started/installation/docker) in their docs. See [parents-frame](./../../parents-frame/README.md) for more.
+For server side notes, see [immich-kiosk](../immich-kiosk/). For client side notes, see [driggs-kiosk/](../../driggs-kiosk/).

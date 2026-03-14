@@ -43,7 +43,7 @@ services:
     restart: always
 ```
 
-## USE CASE
+## OPERATION
 
 I then use any device to navigate to `http://driggs-zb:8014` and am greeted with a slideshow of all of my pictures from Immich.
 
