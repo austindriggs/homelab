@@ -1,5 +1,9 @@
 # Driggs TV
 
+ABANDONDED: I NOW USE AN ONN 4K PRO BOX
+
+---
+
 I run Android TV on a Raspberri Pi 4 4GB because I really only use my TV to watch YouTube or movies on Jellyfin.
 
 

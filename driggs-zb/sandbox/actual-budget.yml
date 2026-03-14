@@ -1,9 +1,0 @@
-version: '3.9'
-services:
-  actual_server:
-    image: actualbudget/actual-server:latest
-    ports:
-      - 8048:5006
-    volumes:
-      - /mnt/raid1/ActualBudget:/data
-    restart: unless-stopped

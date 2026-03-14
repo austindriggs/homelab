@@ -13,7 +13,7 @@
 
 ### Surveillance System: 
 
-frigate surveillance through USB camera: 
+frigate surveillance through USB camera (also see homeassistant): 
 - https://github.com/TechHutTV/homelab/blob/main/surveillance/compose.yaml frigate
 - https://www.youtube.com/watch?v=CouxmNqxO4A&list=PLgikNYcILLY_F-vNurQSuUcYadVRjLH0u&index=91 through contaware
 - https://github.com/bluenviron/mediamtx?tab=readme-ov-file#by-device mediamtx
@@ -27,6 +27,20 @@ learn a budgeting software:
 - From [Awesome Docker Compose](https://awesome-docker-compose.com/apps/budgeting/actual-budget): Actual is a local-first personal finance tool based on zero-sum budgeting. It supports synchronization across devices, custom rules, manual transaction importing (from QIF, OFX, and QFX files), and optional automatic synchronization with many banks.
 - https://firefly-iii.org/
 - ghostfolio
+
+
+actual-budget.yml:
+```yaml
+version: '3.9'
+services:
+  actual_server:
+    image: actualbudget/actual-server:latest
+    ports:
+      - 8048:5006
+    volumes:
+      - /mnt/raid1/ActualBudget:/data
+    restart: unless-stopped
+```
 
 
 ### OliveTin
