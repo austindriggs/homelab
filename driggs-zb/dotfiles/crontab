@@ -23,5 +23,8 @@
 # m h  dom mon dow   command
 
 # Check system status daily and weekly:
-0 12 * * * /usr/bin/python3 /docker/ntfy/ntfy.py daily
-0 17 * * 5 /usr/bin/python3 /docker/ntfy/ntfy.py weekly
+0 4 * * * /usr/bin/python3 /docker/ntfy/ntfy.py daily
+#0 17 * * 5 /usr/bin/python3 /docker/ntfy/ntfy.py weekly
+
+# Test every minute:
+#* * * * * /usr/bin/python3 /docker/ntfy/ntfy.py weekly >> /tmp/ntfy_test.log 2>&1
