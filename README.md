@@ -22,18 +22,18 @@ Click the name in the "SERVICE" column to go to its user guide.
 
 ### DOCKER APPS
 
-| STATUS | SERVICE                       | DESCRIPTION                          | PORT | NTFY TOPIC   |
-| ------ | ----------------------------- | ------------------------------------ | ---- | ------------ |
-| x      | Portainer                     | Managing docker apps                 | 8097 | main         |
-| x      | Glance                        | Homepage to monitor and link to apps | 8080 | main         |
-| x      | Syncthing                     | Sync files between devices           | 8057 | main         |
-| x      | [ntfy](#ntfy)                 | Pub-sub notification service         | 8047 | main         |
-|        | Immich                        | Photo library for me                 | 8013 |              |
-| x      | [Immich](#immich)             | Photo library for my parents         | 8019 |              |
-| x      | [Immich Kiosk](#immich-kiosk) | Digital picture frame                | 8014 | Immich-Kiosk |
-| x      | [Jellyfin](#jellyfin)         | Video library for me and my parents  | 8074 | Jellyfin     |
-| x      | Jellyseer                     | Video library requests and status    | 8075 | Jellyfin     |
-|        | Jellystat                     | Video library statistics             | 8076 | Jellyfin     |
+| STATUS | SERVICE                       | DESCRIPTION                          | PORT | NTFY TOPIC |
+| ------ | ----------------------------- | ------------------------------------ | ---- | ---------- |
+| x      | Portainer                     | Managing docker apps                 | 8097 | main       |
+| x      | Glance                        | Homepage to monitor and link to apps | 8080 | main       |
+| x      | Syncthing                     | Sync files between devices           | 8057 | main       |
+| x      | [ntfy](#ntfy)                 | Pub-sub notification service         | 8047 | main       |
+|        | Immich                        | Photo library for me                 | 8013 | Immich     |
+| x      | [Immich](#immich)             | Photo library for my parents         | 8019 | Immich     |
+| x      | [Immich Kiosk](#immich-kiosk) | Digital picture frame                | 8014 | Immich     |
+| x      | [Jellyfin](#jellyfin)         | Video library for me and my parents  | 8074 | Jellyfin   |
+| x      | Jellyseer                     | Video library requests and status    | 8075 | Jellyfin   |
+|        | Jellystat                     | Video library statistics             | 8076 | Jellyfin   |
 
 
 ## USER GUIDES
@@ -45,7 +45,7 @@ Click the name in the "SERVICE" column to go to its user guide.
 Setup:
 1. Download the Tailscale app from the app store. Allow any VPN access that Tailscale needs in your phone's settings.
 2. Sign in via google account (either mine, mom's, or the guest gmail account).
-3. When asked to "select a tailnet", select MY EMAIL, no matter which one you just signed in wit
+3. When asked to "select a tailnet", select MY EMAIL, no matter which one you just signed in with.
 4. For any more documentation notes, see [./driggs-zb/debian/](./driggs-zb/debian/README.md#tailscale).
 
 
