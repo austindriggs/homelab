@@ -3,14 +3,14 @@ version: "3.8"
 services:
   immich-kiosk:
     image: ghcr.io/damongolding/immich-kiosk:latest
-    container_name: immich-kiosk
+    container_name: immich-kiosk-parents
     environment:
       LANG: "en_US"
       TZ: "America/New_York"
       # Required settings
-      KIOSK_IMMICH_URL: "http://172.16.58.224:8019"
+      KIOSK_IMMICH_URL: "http://10.3.10.219:8019"
       # Kiosk behaviour
-      KIOSK_REFRESH: 10
+      KIOSK_DURATION: 10
       # UI
       KIOSK_HIDE_CURSOR: true
       KIOSK_THEME: fade
@@ -20,6 +20,7 @@ services:
       KIOSK_SHOW_IMAGE_DATE: true
       KIOSK_IMAGE_DATE_FORMAT: YYYY-MM-DD
       KIOSK_SHOW_IMAGE_LOCATION: true
+      KIOSK_HTTP_TIMEOUT: 180
     env_file:
       - stack.env
     ports:
