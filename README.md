@@ -1,5 +1,13 @@
 # Austin's Homelab
 
+![OS: Debian](https://img.shields.io/badge/OS-Debian-A81D33?style=flat&logo=debian&logoColor=white)
+![Hardware: ZimaBlade](https://img.shields.io/badge/Hardware-ZimaBlade_7700-black?style=flat)
+![Container: Docker](https://img.shields.io/badge/Runtime-Docker-2496ED?style=flat&logo=docker&logoColor=white)
+![Storage: RAID1](https://img.shields.io/badge/Storage-mdadm_RAID1-orange?style=flat)
+![Network: Tailscale](https://img.shields.io/badge/Network-Tailscale-short?style=flat&logo=tailscale&logoColor=white&color=5A5858)
+![Immich](https://img.shields.io/badge/Photos-Immich-80D8FF?style=flat&logo=immich&logoColor=white)
+![Jellyfin](https://img.shields.io/badge/Media-Jellyfin-00A4DC?style=flat&logo=jellyfin&logoColor=white)
+
 The initial goal of my homelab was to self-host terabytes of family pictures and videos collected over the last few decades, but has grown into a file-backup NAS, home automation system, media library, and more!
 
 The primary server is the [ZimaBlade 7700](./driggs-zb/README.md) (NAS Kit) running Debian with Docker containers for most applications.
