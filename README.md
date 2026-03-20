@@ -1,7 +1,6 @@
 # Austin's Homelab
 
 ![OS: Debian](https://img.shields.io/badge/OS-Debian-A81D33?style=flat&logo=debian&logoColor=white)
-![Hardware: ZimaBlade](https://img.shields.io/badge/Hardware-ZimaBlade_7700-black?style=flat)
 ![Container: Docker](https://img.shields.io/badge/Runtime-Docker-2496ED?style=flat&logo=docker&logoColor=white)
 ![Storage: RAID1](https://img.shields.io/badge/Storage-mdadm_RAID1-orange?style=flat)
 ![Network: Tailscale](https://img.shields.io/badge/Network-Tailscale-short?style=flat&logo=tailscale&logoColor=white&color=5A5858)
