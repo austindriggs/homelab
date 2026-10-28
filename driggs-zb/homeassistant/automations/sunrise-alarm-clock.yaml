@@ -1,0 +1,20 @@
+alias: Sunrise Alarm Clock
+description: Ramps up the ZL1 bulb from 5:30 AM to 6:00 AM
+triggers:
+- at: 05:30:00
+  trigger: time
+actions:
+- data:
+    brightness_pct: 1
+    color_temp_kelvin: 2200
+  action: light.turn_on
+  target:
+    device_id: c5e59bf578911d563a02c7078becd495
+- data:
+    brightness_pct: 100
+    color_temp_kelvin: 5000
+    transition: 1800
+  action: light.turn_on
+  target:
+    device_id: c5e59bf578911d563a02c7078becd495
+mode: single

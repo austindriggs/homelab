@@ -1,0 +1,6 @@
+default_config:
+
+http:
+  server_port: 8044
+
+automation: !include automations.yaml
